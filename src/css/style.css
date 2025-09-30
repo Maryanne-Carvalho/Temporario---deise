@@ -1,0 +1,1389 @@
+:root {
+  --bg-body: #ffffff;
+  --bg-navbar: #fafafa;
+  --border-navbar: #dddddd;
+
+  --text-default: #6B6B6B;
+  --text-hover: #4A5D41;
+
+  --btn-bg: #A8C686;
+  --btn-hover: #4A5D41;
+  --btn-text: #ffffff;
+
+  --bg-hero: #EDEDE4;
+  --text-main: #2C2C2C;
+  --text-secondary: #444444;
+
+  --bg-card-icon: #E8E3D4;
+}
+
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cormorant Infant', serif;
+  background: var(--bg-body);
+}
+
+/* NAVBAR */
+.menu-toggle {
+    display: none;
+
+  }
+
+.navbar {
+  width: 100%;
+  position: relative; 
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-navbar);
+  border-bottom: 1px solid var(--border-navbar);
+}
+
+/* LOGO */
+.logo img {
+  height: 75px;
+  /* ajuste conforme a logo */
+}
+
+/* LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  font-family: 'Cormorant SC', serif;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-default);
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--btn-bg);
+}
+
+/* BOTÃO */
+.btn-consulta a {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Cormorant Infant', serif;
+  transition: 0.3s;
+}
+
+.btn-consulta a:hover {
+  background: var(--btn-hover);
+}
+
+/* HERO */
+.hero {
+  background: var(--bg-hero);
+  padding:  7px;
+  display: flex;
+  justify-content: center; /* centraliza o container */
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  min-height: 80vh;
+  max-height: 70vh; /* altura máxima do Hero */
+  position: relative;
+}
+
+/* TEXTO */
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-family: 'Cormorant SC', serif;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* IMAGEM */
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 100%; /* ocupa altura do container */
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* preenche o container */
+  object-position: top;   /* mantém a parte de cima sempre visível */
+  display: block;
+}
+
+/* Gradient */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,
+    rgba(237, 237, 228, 1) 0%,
+    rgba(237, 237, 228, 1) 0%,
+    rgba(237, 237, 228, 0) 45%,
+    rgba(237, 237, 228, 0) 100%
+  );
+  pointer-events: none;
+}
+/* BEM VINDO */
+
+.welcome {
+  background-color: var(--bg-hero);
+  /* fundo */
+  padding: 4rem 2rem;
+  font-family: 'Cormorant Infant', serif;
+}
+
+.welcome-label {
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--text-hover);
+  /* verde escuro */
+  border-left: 4px solid var(--text-hover);
+  padding-left: 8px;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.welcome-content {
+  text-align: center;
+}
+
+.welcome-title {
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  /* título escuro */
+}
+
+.welcome-text {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  /* texto médio */
+}
+
+/* SEÇÃO ÁREAS DE ATUAÇÃO */
+.atuacao {
+  background: var(--bg-hero);
+  padding: 4rem 2rem;
+}
+
+.atuacao-label {
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--text-hover);
+  border-left: 4px solid var(--text-hover);
+  padding-left: 8px;
+  margin-bottom: 2rem;
+  text-align: left;
+  font-family: 'Cormorant SC', serif;
+}
+
+.atuacao h2 {
+  text-align: center;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--text-main);
+  margin-bottom: 3rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--bg-body);
+  border-radius: 12px;
+  padding: 30px 25px;
+  text-align: center;
+  border-left: 8px solid var(--text-hover);
+  /* Borda verde */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  background: var(--bg-card-icon);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+}
+
+.card-icon img {
+  width: 42px;
+  height: 42px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-family: 'Cormorant Infant', serif;
+  color: var(--text-hover);
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+
+
+
+/* SEÇÃO PSICOTERAPIA ONLINE */
+.online {
+  background: var(--bg-hero);
+  padding: 4rem 2rem;
+}
+
+.online-label {
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--text-hover);
+  border-left: 4px solid var(--text-hover);
+  padding-left: 8px;
+  margin-bottom: 2rem;
+  text-align: left;
+  font-family: 'Cormorant SC', serif;
+}
+
+.online-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+}
+
+.online-card {
+  background: var(--bg-card-icon);
+  /* Bege claro */
+  border-radius: 10px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.online-card h3 {
+  font-size: 1.2rem;
+  font-family: 'Cormorant Infant', serif;
+  color: var(--text-hover);
+  margin-bottom: 15px;
+}
+
+.online-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.online-extra {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.online-extra h4 {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-main);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.online-extra p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Sobre Mim */
+
+.sobre {
+  background: var(--bg-body);
+  /* Cor de fundo branca */
+  padding: 60px 20px;
+}
+
+.sobre-label {
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--text-hover);
+  border-left: 4px solid var(--text-hover);
+  padding-left: 8px;
+  margin-bottom: 2rem;
+  text-align: left;
+  font-family: 'Cormorant SC', serif;
+}
+
+.sobre-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sobre-imagem img {
+  width: 380px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 40px;
+  object-fit: cover;
+}
+
+.sobre-texto {
+  flex: 1;
+  color: #2e2e2e;
+}
+
+.sobre-texto .nome {
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.sobre-texto p {
+  font-family: 'Cormorant Infant', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+
+/* FAQ */
+
+.faq {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq h2 {
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.faq h2::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 28px;
+  background-color: var(--btn-hover);
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.faq p {
+  font-size: 16px;
+  color: var(--btn-hover);
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: var(--bg-hero);
+  border: none;
+  border-radius: 10px;
+  padding: 14px 20px;
+  text-align: left;
+  font-family: 'Cormorant Infant', serif;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background-color: var(--bg-hero);
+}
+
+.faq-icon {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+/*CTA*/
+
+.cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0;
+  background: var(--green-dark, --btn-hover);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1100px;
+}
+
+.cta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cta-content {
+  padding: 2rem;
+  text-align: center;
+  color: var(--btn-text);
+}
+
+.cta-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.cta-content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.cta-icon {
+  margin-bottom: 1rem;
+}
+
+.cta-icon img {
+  width: 60px;
+  height: 60px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--btn-bg);
+  color: var(--btn-hover);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+  background: var(--btn-bg);
+  transform: translateY(-2px);
+}
+
+/* Section centralizada - CONTATO*/
+
+.secao-contato-whatsapp {
+  /* Usa Flexbox para colocar as colunas lado a lado */
+  display: flex;
+  max-width: 1000px;
+  /* Largura máxima da seção */
+  margin: 40px auto;
+  /* Centraliza a seção na página */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra sutil */
+}
+
+/* --- Coluna da Imagem (Esquerda) --- */
+.coluna-imagem {
+  /* Ocupa a largura da imagem na foto (aprox. 40% - ajuste conforme necessário) */
+  flex: 0 0 40%;
+  overflow: hidden;
+  /* Garante que a imagem se ajuste ao container */
+  border-radius: 25px 0 0 25px;
+  /* Bordas arredondadas apenas no lado esquerdo */
+}
+
+.imagem-principal {
+  width: 100%;
+  height: 100%;
+  /* O `object-fit: cover` garante que a imagem cubra o espaço
+       sem distorcer, cortando o que for necessário */
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Coluna do Conteúdo (Direita) --- */
+.coluna-conteudo {
+  /* Ocupa o restante do espaço (aprox. 60% - ajuste conforme necessário) */
+  flex: 1;
+  background-color: var(--btn-hover);
+  /* Cor de fundo escura (verde musgo da imagem) */
+  padding: 20px 60px;
+  /* Espaçamento interno */
+  color: var(--btn-text);
+  /* Cor do texto claro */
+  position: relative;
+  /* Para posicionar o ícone de cérebro */
+  display: flex;
+  /* Para centralizar o conteúdo verticalmente se necessário */
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 0 25px 25px 0;
+  /* Bordas arredondadas apenas no lado direito */
+}
+
+.titulo-conversar {
+  font-family: 'Cormorant SC', serif;
+  /* Exemplo de fonte serifada */
+  font-size: 2em;
+  font-weight: 400;
+  /* Não é negrito */
+  margin-bottom: 20px;
+  align-self: center;
+  /* Alinha o título à direita/fim */
+  text-transform: uppercase;
+}
+
+.icone-cerebro-fundo {
+  /* Círculo verde claro com o ícone dentro */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  /* Move 50% para a esquerda e cima para centralizar na borda */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: var(--btn-bg);
+  /* Cor de fundo do círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icone-cerebro {
+  width: 60%;
+  height: 60%;
+  /* A cor e o traço do SVG foram definidos no HTML, 
+       mas podem ser ajustados aqui se o ícone for uma imagem */
+}
+
+.texto-chamada {
+  font-family: 'Cormorant Infant', serif;
+  /* Exemplo de fonte serifada com boa leitura */
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding-left: 100px;
+  /* Adiciona espaço à esquerda por causa do círculo */
+  max-width: 80%;
+  /* Limita a largura do texto */
+}
+
+/* --- Estilo do Botão --- */
+.botao-whatsapp {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--btn-bg);
+  /* Cor verde claro do botão */
+  color: var(--btn-hover);
+  /* Cor do texto do botão */
+  text-decoration: none;
+  font-family: 'Lora', serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+  /* Alinha o botão à esquerda/início */
+  margin-left: 100px;
+  /* Adiciona espaço à esquerda por causa do círculo */
+}
+
+.botao-whatsapp:hover {
+  background-color: #C5E5B9;
+}
+
+.artigo-burnout-container {
+  max-width: 800px;
+  margin: 40px auto;
+  /* Centraliza o artigo na página */
+  padding: 30px;
+  background-color: var(--btn-text);
+  /* Fundo branco para a área de conteúdo */
+  border: 1px solid var(--bg-hero);
+  /* Borda suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  /* Sombra sutil */
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto);
+  line-height: 1.7;
+  /* Bom espaçamento entre linhas */
+}
+
+/* TÍTULO PRINCIPAL (H2) */
+.artigo-titulo-principal {
+  font-family: var(--btn-hover);
+  font-size: 2.2em;
+  font-weight: bold;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--btn-hover);
+}
+
+/* SUBTÍTULOS (H3) */
+.artigo-subtitulo {
+  font-family: var(--fonte-serifa);
+  font-size: 1.6em;
+  color: var(--btn-hover);
+  margin-top: 35px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* PARÁGRAFOS DE TEXTO CORRIDO */
+.artigo-texto-paragrafo {
+  font-size: 1em;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* ÊNFASE DENTRO DO TEXTO (usando a tag <strong>) */
+.artigo-texto-paragrafo strong {
+  font-weight: bold;
+  color: var(--text-default);
+}
+
+/* LISTA DE SINTOMAS */
+.artigo-lista-sintomas {
+  list-style: none;
+  /* Remove os marcadores padrão */
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.artigo-lista-sintomas li {
+  position: relative;
+  padding-left: 25px;
+  /* Espaço para o marcador customizado */
+  margin-bottom: 10px;
+}
+
+/* Marcador customizado para a lista de sintomas */
+.artigo-lista-sintomas li::before {
+  content: "•";
+  /* Usa um ponto como marcador */
+  position: absolute;
+  left: 0;
+  color: var(--btn-hover);
+  /* Cor do marcador */
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* ALERTA DE AJUDA */
+.artigo-alerta-ajuda {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--cor-alerta);
+  text-align: center;
+  padding: 15px;
+  margin: 30px 0;
+  border: 2px solid var(--cor-alerta);
+  background-color: var(--bg-body);
+}
+
+/* PARÁGRAFO FINAL */
+.artigo-texto-final {
+  font-style: italic;
+  padding-top: 15px;
+  border-top: 1px dashed var(--border-navbar);
+}
+
+/* --- Estilos Gerais do Rodapé --- */
+footer {
+  font-family: 'Cormorant SC', serif;
+  color: var(--text-default);
+
+  /* Adiciona a linha de separação sutil no topo do rodapé */
+  border-top: 1px solid var(--btn-text);
+  /* 1px de espessura, linha sólida, cor cinza bem clara */
+
+  /* Adiciona um pouco de espaço acima da linha */
+  padding-top: 40px;
+}
+
+/* Container Principal das Colunas (fundo claro) */
+.footer-principal-conteudo {
+  display: flex;
+  justify-content: space-between;
+  /* Distribui as colunas */
+  align-items: flex-start;
+  /* Alinha o conteúdo ao topo */
+  max-width: 1200px;
+  /* Largura máxima para centralizar o conteúdo */
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
+  background-color: var(--bg-navbar);
+  /* Cor de fundo claro/bege */
+}
+
+.footer-principal-conteudo a {
+  text-decoration: none;
+  color: inherit;
+  /* Mantém a cor do texto do container pai */
+}
+
+.footer-principal-conteudo a:hover {
+  text-decoration: underline;
+  /* Opcional: só sublinha ao passar o mouse */
+}
+
+.titulo-coluna {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--btn-hover);
+  /* Cor verde musgo */
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* --- COLUNA 1: LOGO --- */
+.coluna-logo {
+  flex: 1.5;
+  /* Dá mais espaço para a logo se necessário */
+  padding-right: 20px;
+}
+
+.logo-footer {
+  max-width: 200px;
+  /* Ajuste o tamanho da logo */
+  height: auto;
+}
+
+/* --- COLUNA 2: NAVEGAÇÃO --- */
+.coluna-navegacao {
+  flex: 1;
+}
+
+.lista-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-links li {
+  margin-bottom: 5px;
+}
+
+.lista-links a {
+  color: var(--text-default);
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.lista-links a:hover {
+  text-decoration: underline;
+}
+
+/* --- COLUNA 3: CONTATO --- */
+.coluna-contato {
+  flex: 1.5;
+}
+
+/* Estilização para as Imagens dos Ícones de Contato (Telefone e Email) */
+.icone-contato-img {
+  width: 22px;
+  /* Define a largura do ícone (ajuste para o seu tamanho ideal) */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  margin-right: 8px;
+  /* Espaçamento entre o ícone e o texto do link */
+  vertical-align: middle;
+  /* Ajuda a centralizar a imagem verticalmente */
+}
+
+/* Garante o alinhamento correto dos itens (o link e a imagem) */
+.item-contato {
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  display: flex;
+  /* Essencial para alinhar a imagem e o texto */
+  align-items: center;
+  /* Alinha o conteúdo verticalmente no centro */
+}
+
+/* Estilização para os links (garantindo que não fiquem sublinhados) */
+.link-contato {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.link-contato:hover {
+  text-decoration: underline;
+}
+
+/* Remova o CSS anterior que formatava os spans, caso tenha adicionado: */
+/*
+.icone-telefone, .icone-email { 
+    ... 
+}
+*/
+
+.item-contato {
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilização para Ícones (Ajuste se usar Font Awesome) */
+.icone-telefone,
+.icone-email {
+  margin-right: 5px;
+  color: var(--btn-hover);
+  /* Cor dos ícones */
+  font-size: 1.1em;
+}
+
+/* --- COLUNA 4: BLOG E REDES SOCIAIS --- */
+.coluna-blog-redes {
+  flex: 2;
+  /* Dá mais espaço a esta coluna pois contém 2 blocos */
+  display: flex;
+  /* Para alinhar BLOG e REDES SOCIAIS lado a lado */
+  gap: 30px;
+}
+
+.bloco-blog {
+  flex: 2;
+  /* Mais espaço para o card do blog */
+}
+
+.bloco-redes {
+  flex: 1;
+  /* Menos espaço para redes sociais */
+}
+
+.card-blog {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  /* Largura do card do blog */
+}
+
+.imagem-post {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Estilização para a imagem do ícone do Instagram */
+.icone-instagram-img {
+  width: 20px;
+  /* Largura do ícone (ajuste conforme necessário) */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  vertical-align: middle;
+  /* Ajuda a alinhar o ícone verticalmente com o texto */
+  margin-right: 8px;
+  /* Espaçamento entre o ícone e o texto "@DEISECERQUEIRA" */
+  /* Você pode ajustar a cor do ícone se for SVG e quiser mudar via CSS,
+       mas para PNG/JPG, a cor já está na imagem. */
+}
+
+/* Garante que o parágrafo do perfil use flexbox para melhor alinhamento */
+.perfil-insta {
+  font-size: 0.95em;
+  color: var(--btn-hover);
+  /* Destaque o perfil na cor verde musgo */
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  /* Permite alinhar itens dentro do parágrafo */
+  align-items: center;
+  /* Alinha verticalmente a imagem e o texto */
+}
+
+/* Opcional: Efeito de sublinhado ao passar o mouse */
+.link-instagram:hover .perfil-insta {
+  text-decoration: underline;
+}
+
+/* Se você usou a classe sugerida 'titulo-post-blog' */
+.titulo-post-blog {
+  /* Define a fonte como a principal do rodapé (Cormorant SC), se tiver serifa, ou outra com serifa */
+  font-family: 'Cormorant SC', serif;
+  font-size: 1em;
+  /* Tamanho maior para o título */
+  font-weight: bold;
+  /* Negrito */
+  color: var(--text-default);
+  /* Cor padrão escura */
+  text-decoration: none;
+  /* Remove sublinhado */
+  display: block;
+  /* Garante que o link ocupe a linha toda */
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1;
+  /* Adiciona a caixa alta no CSS para o título */
+  text-transform: uppercase;
+}
+
+.footer-faixa-legal {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #F8F8F8;
+  border-top: 1px solid #E0E0E0;
+  /* Linha de separação suave */
+  font-size: 0.9em;
+}
+
+.footer-faixa-legal a {
+  color: var(--text-default);
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.footer-faixa-legal a:hover {
+  text-decoration: underline;
+}
+
+
+/* Faixa do Copyright (fundo escuro) */
+.footer-copyright {
+  background-color: var(--btn-hover);
+  /* Cor verde musgo */
+  color: #FFFFFF;
+  /* Texto branco */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.8em;
+}
+
+.footer-copyright p {
+  margin: 0;
+}
+
+/* Estilização específica do link "Criado por We Lúmen" dentro do copyright */
+.footer-copyright a {
+  /* Garante que o link seja branco, como o restante do texto do copyright */
+  color: #FFFFFF;
+
+  /* Remove o sublinhado padrão */
+  text-decoration: none;
+
+  /* Opcional: torna o texto um pouco mais fino ou mantém o padrão */
+  font-weight: normal;
+}
+
+/* Efeito ao passar o mouse */
+.footer-copyright a:hover {
+  /* Adiciona um sublinhado sutil ao passar o mouse */
+  text-decoration: underline;
+
+  /* Opcional: usa a cor do botão (verde musgo) para o hover, 
+       mas neste contexto, branco é melhor para a legibilidade sobre o fundo verde. */
+  /* color: var(--btn-hover);  */
+
+  /* Se quiser um efeito de cor sutil, pode-se usar um branco mais claro ou cinza */
+  /* color: rgba(255, 255, 255, 0.8); */
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+     min-height: auto;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-text {
+    padding: 40px 20px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-imagem img {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  /*welcome*/
+  .welcome {
+    padding: 3rem 1.5rem; /* reduz padding da seção */
+  }
+
+  .welcome-label {
+    font-size: 0.85rem; /* um pouco menor */
+    padding-left: 6px;
+    margin-bottom: 1.5rem;
+  }
+
+  .welcome-title {
+    font-size: 1.5rem; /* título menor */
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+  }
+
+  .welcome-text {
+    font-size: 0.95rem; /* texto um pouco menor */
+    max-width: 600px;   /* reduz largura do parágrafo */
+    line-height: 1.5;
+  }
+}
+
+/* Telas até 768px (tablets e celulares grandes) */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .nav-links {
+  position: absolute; /* menu abaixo da navbar */
+    top: 100%; /* imediatamente abaixo da navbar */
+    left: 0;
+    right: 0;
+    background: var(--bg-navbar);
+    flex-direction: column;
+    display: none;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 26px;
+  }
+
+  /*HERO*/
+  .hero-text h1 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-image {
+    min-height: 40vh;
+  }
+
+  /*wELCOME*/
+ .welcome {
+    padding: 3rem 1rem;
+  }
+
+  .welcome-title {
+    font-size: 1.5rem;
+  }
+
+  .welcome-text {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+
+  .welcome-label {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding-left: 6px;
+    border-left-width: 3px;
+  }
+
+  /*SEÇÃO DE ATUAÇÃO*/
+   .cards {
+    grid-template-columns: 1fr; /* 1 coluna */
+    gap: 1.5rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+    /*SEÇÃO PSICOTERAPIA ONLINE*/
+    .online-cards {
+    grid-template-columns: 1fr; /* 1 coluna */
+    gap: 1.5rem;
+  }
+
+  .online-card {
+    max-width: 100%; 
+  }
+
+  .online-label {
+    text-align: center;   
+    border-left: none;    
+    padding-left: 0;
+  }
+
+  .online-extra {
+    text-align: center;  
+    padding: 0 1rem;
+  }
+
+     /*SEÇÃO SOBRE MIM*/
+  .sobre-container {
+    gap: 20px;
+  }
+
+  .sobre-imagem img {
+    width: 100%;    /* ocupa a largura da tela */
+    max-width: 280px;
+  }
+
+  .sobre-texto .nome {
+    font-size: 1.5rem; /* diminui o título */
+  }
+
+  .sobre-texto p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .sobre-label {
+    text-align: center;
+    border-left: none;  /* remove a barrinha lateral */
+    padding-left: 0;
+  }
+
+  /*FAQ*/
+   .faq {
+    padding: 0 15px; /* respiro nas laterais */
+  }
+
+  .faq h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .faq p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .faq-question {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .faq-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  /*FOOTER*/
+   .footer-principal-conteudo {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 40px;
+  }
+
+  .coluna-logo,
+  .coluna-navegacao,
+  .coluna-contato,
+  .coluna-blog-redes {
+    flex: none;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .coluna-logo {
+    margin-bottom: 20px;
+  }
+
+  .coluna-navegacao ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .coluna-navegacao li {
+    margin-bottom: 10px;
+  }
+
+  .coluna-blog-redes {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .card-blog {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .bloco-redes {
+    width: 100%;
+  }
+
+  .perfil-insta {
+    justify-content: center;
+  }
+
+  .footer-faixa-legal,
+  .footer-copyright {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 15px 10px;
+  }
+
+  .footer-copyright a {
+    display: block;
+    margin-top: 5px;
+  }
+  
+
+}
+
+/* Telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+
+  /*HERO*/
+   .hero-text h1 {
+    font-size: 18px;
+  }
+
+  .hero-text p {
+    font-size: 13px;
+  }
+
+  .hero-image {
+    min-height: 30vh;
+  }
+  
+  /*CONTATO*/
+   .secao-contato-whatsapp {
+    flex-direction: column;
+    max-width: 90%;
+    margin: 20px auto;
+    box-shadow: none; /* opcional: remover sombra */
+  }
+
+  .coluna-imagem {
+    display: none; /* esconde a imagem em telas menores */
+  }
+
+  .coluna-conteudo {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px; /* suaviza cantos em mobile */
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .icone-cerebro-fundo {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .texto-chamada {
+    padding-left: 0;
+    max-width: 100%;
+    font-size: 1.1em;
+  }
+
+  .botao-whatsapp {
+    margin-left: 0;
+    align-self: center;
+  }
+
+
+}
