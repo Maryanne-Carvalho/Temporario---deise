@@ -55,10 +55,14 @@ body {
 
 /* LINKS */
 .nav-links {
-  list-style: none;
+list-style: none;
   display: flex;
   gap: 30px;
   font-family: 'Cormorant SC', serif;
+  align-items: center;
+  justify-content: center; /* mantém os links centralizados */
+  margin: 0; /* remove auto */
+  flex: none; /* impede que ocupe todo o espaço */
 }
 
 .nav-links a {
@@ -66,6 +70,7 @@ body {
   color: var(--text-default);
   font-size: 18px;
   transition: 0.3s;
+   white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -73,6 +78,9 @@ body {
 }
 
 /* BOTÃO */
+.btn-consulta {
+  margin-left: auto; /* empurra o botão para a direita */
+}
 .btn-consulta a {
   background: var(--btn-bg);
   color: var(--btn-text);
@@ -83,10 +91,15 @@ body {
   font-weight: 500;
   font-family: 'Cormorant Infant', serif;
   transition: 0.3s;
+  white-space: nowrap; 
 }
 
 .btn-consulta a:hover {
   background: var(--btn-hover);
+}
+
+.navbar .btn-consulta {
+  margin-left: 20px;
 }
 
 /* HERO */
@@ -104,8 +117,8 @@ body {
   gap: 20px;
   max-width: 1200px;
   width: 100%;
-  min-height: 80vh;
-  max-height: 70vh; /* altura máxima do Hero */
+  min-height: 60vh;
+  max-height: 80vh; /* limita altura do hero */
   position: relative;
 }
 
@@ -131,18 +144,19 @@ body {
 
 /* IMAGEM */
 .hero-image {
-  position: relative;
   width: 100%;
-  height: 100%; /* ocupa altura do container */
+  height: 100%;
+  max-height: 80vh; /* altura máxima do banner */
   overflow: hidden;
   position: relative;
 }
 
 .hero-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;      /* preenche o container */
-  object-position: top;   /* mantém a parte de cima sempre visível */
+  height: auto; /* altura se ajusta proporcionalmente */
+  max-height: 80vh; /* não deixa a imagem gigante */
+  object-fit: cover; /* mantém proporção e não corta */
+  object-position: top; /* mantém topo visível */
   display: block;
 }
 
@@ -162,6 +176,7 @@ body {
   );
   pointer-events: none;
 }
+
 /* BEM VINDO */
 
 .welcome {
@@ -1062,17 +1077,43 @@ footer {
 
 /* Responsividade */
 @media (max-width: 1024px) {
-  .hero {
-    grid-template-columns: 1fr;
-     min-height: auto;
+ /* Navbar geral */
+  .navbar {
+    padding: 10px 30px; /* menos padding lateral */
+  }
+
+  .logo img {
+    height: 65px; /* logo menor */
+  }
+
+  /* Menu */
+  .nav-links {
+    gap: 13px; /* menos espaço entre itens */
+  }
+
+  .nav-links a {
+    gap: 18px; /* dá mais respiro sem quebrar */
+    flex: 1; /* ocupa o espaço disponível */
+    justify-content: center; /* espalha os links */ 
+   }
+
+    /* Botão consulta */
+  .btn-consulta a {
+    font-size: 14px;
+    padding: 8px 16px;
+    white-space: nowrap; /* mantém sempre em 1 linha */
+  }
+
+  /*HERO*/
+ .hero {
+    grid-template-columns: 1fr; /* transforma em coluna */
     text-align: center;
-    padding: 2rem 1rem;
   }
 
   .hero-text {
-    padding: 40px 20px;
     max-width: 100%;
     margin: 0 auto;
+    padding-left: 0; /* remove padding lateral no mobile */
   }
 
   .sobre-container {
@@ -1136,20 +1177,37 @@ footer {
     cursor: pointer;
     font-size: 26px;
   }
+  /* Adiciona o botão dentro do menu */
+  .btn-consulta {
+    order: 99; /* garante que fique por último no menu */
+    margin: 10px 0; /* espaçamento interno */
+    width: 100%; /* opcional: botão ocupa toda a largura do menu */
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-consulta a {
+    width: auto; /* mantém o tamanho natural */
+    padding: 10px 20px;
+    font-size: 16px;
+  }
 
   /*HERO*/
-  .hero-text h1 {
-    font-size: 22px;
-    line-height: 1.4;
+ .hero-text h1 {
+    font-size: 1.6rem;
   }
+
   .hero-text p {
-    font-size: 14px;
+    font-size: 1rem;
   }
 
-  .hero-image {
-    min-height: 40vh;
+  .hero-container {
+    gap: 15px;
   }
 
+  .hero-image img {
+    max-width: 90%;
+  }
   /*wELCOME*/
  .welcome {
     padding: 3rem 1rem;
@@ -1334,11 +1392,11 @@ footer {
 
   /*HERO*/
    .hero-text h1 {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .hero-text p {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .hero-image {
