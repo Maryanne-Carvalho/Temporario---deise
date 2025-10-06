@@ -39,7 +39,7 @@ body {
 .navbar {
   width: 100%;
   position: relative; 
-  padding: 15px 50px;
+  padding: 25px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,21 +48,30 @@ body {
 }
 
 /* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px; 
+  overflow: visible; 
+}
+
 .logo img {
-  height: 75px;
-  /* ajuste conforme a logo */
+  height: 150px; 
+  display: block;
+  object-fit: contain; 
 }
 
 /* LINKS */
 .nav-links {
-list-style: none;
+  list-style: none;
   display: flex;
   gap: 30px;
   font-family: 'Cormorant SC', serif;
   align-items: center;
-  justify-content: center; /* mantém os links centralizados */
-  margin: 0; /* remove auto */
-  flex: none; /* impede que ocupe todo o espaço */
+  justify-content: center; 
+  margin: 0; 
+  flex: none; 
 }
 
 .nav-links a {
@@ -79,7 +88,7 @@ list-style: none;
 
 /* BOTÃO */
 .btn-consulta {
-  margin-left: auto; /* empurra o botão para a direita */
+  margin-left: auto; 
 }
 .btn-consulta a {
   background: var(--btn-bg);
@@ -107,7 +116,7 @@ list-style: none;
   background: var(--bg-hero);
   padding:  7px;
   display: flex;
-  justify-content: center; /* centraliza o container */
+  justify-content: center; 
 }
 
 .hero-container {
@@ -118,7 +127,7 @@ list-style: none;
   max-width: 1200px;
   width: 100%;
   min-height: 60vh;
-  max-height: 80vh; /* limita altura do hero */
+  max-height: 80vh; 
   position: relative;
 }
 
@@ -129,7 +138,7 @@ list-style: none;
 
 .hero-text h1 {
   font-family: 'Cormorant Infant', serif;
-  font-size: 26px;
+  font-size: 35px;
   font-weight: 500;
   line-height: 1.4;
   color: var(--text-main);
@@ -138,7 +147,7 @@ list-style: none;
 
 .hero-text p {
   font-family: 'Cormorant SC', serif;
-  font-size: 15px;
+  font-size: 20px;
   color: var(--text-secondary);
 }
 
@@ -146,17 +155,17 @@ list-style: none;
 .hero-image {
   width: 100%;
   height: 100%;
-  max-height: 80vh; /* altura máxima do banner */
+  max-height: 80vh; 
   overflow: hidden;
   position: relative;
 }
 
 .hero-image img {
   width: 100%;
-  height: auto; /* altura se ajusta proporcionalmente */
-  max-height: 80vh; /* não deixa a imagem gigante */
-  object-fit: cover; /* mantém proporção e não corta */
-  object-position: top; /* mantém topo visível */
+  height: auto; 
+  max-height: 80vh; 
+  object-fit: cover; 
+  object-position: top; 
   display: block;
 }
 
@@ -187,7 +196,7 @@ list-style: none;
 }
 
 .welcome-label {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   font-style: normal;
   color: var(--text-hover);
   /* verde escuro */
@@ -203,7 +212,7 @@ list-style: none;
 
 .welcome-title {
   font-family: 'Cormorant SC', serif;
-  font-size: 1.8rem;
+  font-size: 2.0rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
@@ -212,7 +221,7 @@ list-style: none;
 }
 
 .welcome-text {
-  font-size: 1rem;
+  font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
@@ -227,7 +236,7 @@ list-style: none;
 }
 
 .atuacao-label {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   font-style: normal;
   color: var(--text-hover);
   border-left: 4px solid var(--text-hover);
@@ -286,14 +295,14 @@ list-style: none;
 }
 
 .card h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-family: 'Cormorant Infant', serif;
   color: var(--text-hover);
   margin-bottom: 15px;
 }
 
 .card p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--text-secondary);
   text-align: justify;
@@ -310,7 +319,7 @@ list-style: none;
 }
 
 .online-label {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   font-style: normal;
   color: var(--text-hover);
   border-left: 4px solid var(--text-hover);
@@ -338,14 +347,14 @@ list-style: none;
 }
 
 .online-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-family: 'Cormorant Infant', serif;
   color: var(--text-hover);
   margin-bottom: 15px;
 }
 
 .online-card p {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   color: var(--text-secondary);
 }
@@ -358,7 +367,7 @@ list-style: none;
 
 .online-extra h4 {
   font-family: 'Cormorant Infant', serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--text-main);
   margin-bottom: 0.8rem;
@@ -366,7 +375,7 @@ list-style: none;
 }
 
 .online-extra p {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--text-secondary);
 }
@@ -380,7 +389,7 @@ list-style: none;
 }
 
 .sobre-label {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   font-style: normal;
   color: var(--text-hover);
   border-left: 4px solid var(--text-hover);
@@ -422,23 +431,23 @@ list-style: none;
 
 .sobre-texto p {
   font-family: 'Cormorant Infant', sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   margin-bottom: 16px;
   text-align: justify;
 }
 
 
-/* FAQ */
-
+/* FAQ Container */
 .faq {
   max-width: 700px;
   margin: 0 auto;
 }
 
+/* Título da FAQ */
 .faq h2 {
   font-weight: normal;
-  font-size: 24px;
+  font-size: 34px;
   margin-bottom: 5px;
   position: relative;
 }
@@ -453,16 +462,24 @@ list-style: none;
   vertical-align: middle;
 }
 
+/* Resposta da FAQ */
 .faq p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--btn-hover);
-  margin-bottom: 20px;
+  margin-top: 10px;  /* espaçamento acima da resposta */
+  margin-bottom: 20px; /* espaçamento abaixo da resposta */
+  text-align: left;
+  font-family: 'Cormorant Infant', serif;
+  font-weight: bold;
 }
 
+/* Bloco de cada item FAQ */
 .faq-item {
-  margin-bottom: 12px;
+  margin-bottom: 25px; /* separação entre cada FAQ */
+  padding-top: 5px;
 }
 
+/* Pergunta da FAQ */
 .faq-question {
   width: 100%;
   background-color: var(--bg-hero);
@@ -471,7 +488,7 @@ list-style: none;
   padding: 14px 20px;
   text-align: left;
   font-family: 'Cormorant Infant', serif;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -483,15 +500,18 @@ list-style: none;
   background-color: var(--bg-hero);
 }
 
+/* Ícone da FAQ */
 .faq-icon {
   width: 22px;
   height: 22px;
   transition: transform 0.3s;
 }
 
+/* Ícone girando quando ativo */
 .faq-item.active .faq-icon {
   transform: rotate(45deg);
 }
+
 
 /*CTA*/
 
@@ -1076,6 +1096,24 @@ footer {
 }
 
 /* Responsividade */
+/* --- AJUSTES PARA MONITORES GRANDES --- */
+@media (min-width: 1440px) {
+  .navbar {
+    padding: 30px 100px; /* mais espaçamento lateral */
+  }
+
+  .logo img {
+    height: 170px; /* ligeiro aumento da logo */
+  }
+
+  .nav-links {
+    gap: 50px; /* aumenta o espaço entre os links */
+  }
+
+  .nav-links a {
+    font-size: 22px; /* aumenta o tamanho da fonte */
+  }
+}
 @media (max-width: 1024px) {
  /* Navbar geral */
   .navbar {
@@ -1177,11 +1215,20 @@ footer {
     cursor: pointer;
     font-size: 26px;
   }
+
+    .logo {
+    height: 50px; /* reduz levemente a box */
+  }
+
+  .logo img {
+    height: 90px; /* logo um pouco menor */
+  }
+
   /* Adiciona o botão dentro do menu */
   .btn-consulta {
-    order: 99; /* garante que fique por último no menu */
+    order: 100; /* garante que fique por último no menu */
     margin: 10px 0; /* espaçamento interno */
-    width: 100%; /* opcional: botão ocupa toda a largura do menu */
+    width: 50%; /* opcional: botão ocupa toda a largura do menu */
     display: flex;
     justify-content: center;
   }
@@ -1375,35 +1422,92 @@ footer {
     display: block;
     margin-top: 5px;
   }
-  
 
-}
+ }
 
 /* Telas até 480px (celulares pequenos) */
 @media (max-width: 480px) {
-
   .navbar {
     padding: 15px 20px;
   }
 
-  .logo img {
-    height: 55px;
+  .logo {
+    height: 40px; /* box menor para celular */
   }
 
-  /*HERO*/
-   .hero-text h1 {
-    font-size: 14px;
+  .logo img {
+    height: 70px; /* logo proporcional, ainda legível */
+  }
+
+  /* HERO */
+ .hero {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: auto; /* mantém o hero visível na tela */
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 45% 55%; /* mantém proporção lado a lado */
+    align-items: center;
+    width: 95%;
+    max-width: 380px; /* limita o tamanho total (box menor) */
+    min-height: 250px; /* altura reduzida */
+    margin: 20px auto; /* centraliza a “box” na tela */
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-hero);
+  }
+
+  .hero-text {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 10px;
   }
 
   .hero-text p {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .hero-image {
-    min-height: 30vh;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
   }
-  
-  /*CONTATO*/
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(237, 237, 228, 1) 0%,
+      rgba(237, 237, 228, 0.327) 30%,
+      rgba(237, 237, 228, 0.098) 50%
+    );
+    pointer-events: none;
+  }
+    /*CONTATO*/
    .secao-contato-whatsapp {
     flex-direction: column;
     max-width: 90%;
@@ -1442,6 +1546,131 @@ footer {
     margin-left: 0;
     align-self: center;
   }
+    .sobre-container {
+    flex-direction: column;      
+    align-items: center;         
+    gap: 20px;
+    text-align: center;
+    padding: 25px 20px;
+  }
 
+  .sobre-imagem img {
+    width: 100%;
+    max-width: 280px;            
+    height: auto;
+    border-radius: 10px;
+  }
 
+  .sobre-texto .nome {
+    font-size: 1.8rem;           /* título maior */
+    margin-bottom: 12px;
+  }
+
+  .sobre-texto p {
+    font-size: 1.05rem;          /* texto levemente maior */
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .sobre-label {
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 18px;
+    font-size: 1.1rem;           /* label mais visível */
+  }
+
+  /* ===== FAQ ===== */
+  .faq {
+    padding: 0 20px;
+  }
+
+  .faq h2 {
+    font-size: 1.4rem;           /* título do FAQ maior */
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .faq p {
+    font-size: 1rem;             /* texto mais legível */
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .faq-question {
+    font-size: 1rem;             /* perguntas maiores */
+    padding: 14px 18px;
+  }
+
+  .faq-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+   footer {
+    padding-top: 20px;
+  }
+
+  .footer-principal-conteudo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px 40px 10px;
+    gap: 25px;
+  }
+
+  .coluna-logo,
+  .coluna-navegacao,
+  .coluna-contato,
+  .coluna-blog-redes {
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .logo-footer {
+    max-width: 150px;
+    margin: 0 auto 10px;
+  }
+
+  .titulo-coluna {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  .lista-links li,
+  .item-contato {
+    justify-content: center;
+  }
+
+  .icone-contato-img {
+    width: 18px;
+  }
+
+  .card-blog {
+    width: 100%;
+    align-items: center;
+  }
+
+  .coluna-blog-redes {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .bloco-blog,
+  .bloco-redes {
+    width: 100%;
+  }
+
+  .bloco-redes img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .lista-links a,
+  .link-contato {
+    font-size: 0.9em;
+  }
 }
